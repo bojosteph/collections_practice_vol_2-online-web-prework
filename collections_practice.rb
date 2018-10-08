@@ -1,9 +1,11 @@
 # your code goes here
 def begins_with_r(arr)
+    if arr.each{ |x| x[0] =="r" 
+      return true
+    else 
+      return false
+    end
     
-    arr[0] == "r"? true : false
-  end
-end
     
 def contain_a(arr)
     arr.select do |x|
