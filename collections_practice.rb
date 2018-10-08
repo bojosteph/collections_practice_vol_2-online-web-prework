@@ -1,7 +1,7 @@
 # your code goes here
 def begins_with_r(arr)
-    arr.each do |x| 
-    x[0] == "r"?
+    
+    x[0] == "r"? true : false
   end
 end
     
