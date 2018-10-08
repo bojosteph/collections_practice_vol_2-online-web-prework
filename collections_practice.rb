@@ -1,7 +1,7 @@
 # your code goes here
 def begins_with_r(array)
   array.all? do |string|
-    word.downcase.chr == "r"
+    string.downcase.chr == "r"
   end
 end
 
