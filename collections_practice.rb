@@ -1,7 +1,7 @@
 # your code goes here
 def begins_with_r(arr)
     
-    x[0] == "r"? true : false
+    arr[0] == "r"? true : false
   end
 end
     
