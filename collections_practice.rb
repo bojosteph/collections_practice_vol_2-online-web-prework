@@ -1,10 +1,10 @@
 # your code goes here
 def begins_with_r(arr)
-    if arr.each{ |x| x[0] =="r" 
+    if arr.each do |x| x[0] =="r" 
       return true
     else 
       return false
-    end
+    
     
     
 def contain_a(arr)
