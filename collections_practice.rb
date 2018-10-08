@@ -12,8 +12,8 @@ def contain_a(arr)
 end
    
 def first_wa(arr)
-    arr.detect do |string|
-    string[0,2] == "wa"
+    arr.detect do |x|
+    x[0,2] == "wa"
   end
 end
     
