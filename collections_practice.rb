@@ -1,6 +1,6 @@
 # your code goes here
 def begins_with_r(arr)
-    arr.each do |string| 
+    arr.each do |x| 
     string[0] == "r"
   end
 end
