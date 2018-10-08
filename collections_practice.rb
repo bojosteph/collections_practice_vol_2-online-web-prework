@@ -1,13 +1,13 @@
 # your code goes here
 def begins_with_r(arr)
     arr.each do |x| 
-    x[0] == "r"
+    x[0] == "r"?
   end
 end
     
 def contain_a(arr)
-    arr.select do |string|
-    string.include?("a")
+    arr.select do |x|
+    x.include?("a")
   end
 end
    
