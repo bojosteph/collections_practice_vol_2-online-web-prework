@@ -1,49 +1,54 @@
 # your code goes here
-def begins_with_r(arr)
-    if arr.each do |x| x[0] =="r" 
-      return true
-    else 
-      return false
-    end
-    
-    
-def contain_a(arr)
-    arr.select do |x|
-    x.include?("a")
+def begins_with_r(array)
+  array.all? do |string|
+    word.downcase.chr == "r"
   end
 end
-   
-def first_wa(arr)
-    arr.detect do |x|
-    x[0,2] == "wa"
-  end
+
+def contain_a (array)
+  array.select {|element| element.include?("a")}
 end
-    
-def remove_non_strings(arr)
-    arr.delete_if do |string| 
-    string.is_a?(String) == false
-  end
+
+def first_wa(array)
+  array.find {|word| word.to_s.start_with?("wa")}
 end
-  
+
+def remove_non_strings(array)
+  array.reject {|element| element.class != String}
+end
+
+
 def count_elements(array)
-    
-    array.uniq.each {|i| count = 0
-        array.each {|i2| if i2 == i then count += 1 end}
-        i[:count] = count}
+  counts = Hash.new(0)
+  array.collect {|element| counts[element]+=1 }
+    counts.collect do |hash, number|
+      hash[:count] = number
+    end
+  counts.keys
 end
-    
- def merge_data(keys, data)
-  merged = []
-  keys.each {|i| data.first.map {|k,v| if i.values[0] == k then merged << i.merge(v) end}}
-  merged
+
+def merge_data(keys, data)
+  keys.each do |name_hash|
+    data.each do |hash|
+      name_hash.merge!(hash[name_hash[:first_name]])
+    end
+  end
 end
-    
-def find_cool(cool)
-    cool.select {|i| i.any? {|k,v| v == "cool"}} 
+
+def find_cool(array)
+  array.select {|entry| entry if entry.has_value?("cool")}
 end
-    
+
 def organize_schools(schools)
-    locations_hash = {}
-    schools.collect {|k,v| locations_hash[v[:location]] = []}
-    locations_hash.each {|k,v| schools.each {|k1,v1| if k == v1[:location] then v << k1  end}}
+  by_location = {}
+    schools.each do |school, location_hash|
+      location_hash.each do |symbol, location|
+        if by_location[location] == nil
+          by_location[location] = [school]
+        else
+          by_location[location] << school
+        end
+      end
+    end
+    by_location
 end
